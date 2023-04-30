@@ -41,7 +41,7 @@ app.post('/update-profile', function (req, res) {
     let db = client.db(databaseName);
     userObj['userid'] = 1;
 
-     let myquery = { userid: 1 };
+    let myquery = { userid: 1 };
     let newvalues = { $set: userObj };
 
     db.collection("users").updateOne(myquery, newvalues, {upsert: true}, function(err, res) {
@@ -73,7 +73,7 @@ app.get('/get-profile', function (req, res) {
       res.send(response ? response : {});
     });
   });
-});
+ });
 
 app.listen(3000, function () {
   console.log("app listening on port 3000!");
